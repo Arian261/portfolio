@@ -21,7 +21,7 @@ import ScrollIndicator from '@/components/ScrollIndicator';
 import ScrollToTop from '@/components/ScrollToTop';
 import MiniChatWidget from '@/components/MiniChatWidget'; 
 import AiFab from '@/components/AiFab'; 
-import { AnimatePresence } from 'framer-motion'; // برای انیمیشن خروج دکمه‌ها
+import { AnimatePresence } from 'framer-motion';
 
 export default function Home() {
 
@@ -43,8 +43,8 @@ export default function Home() {
         </Suspense>
       </div>
 
-      <div className={`relative z-10 w-full overflow-x-hidden selection:bg-cyan-500/30 transition-all duration-1000 ${
-        started && viewMode === 'default' ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-20 pointer-events-none fixed"
+      <div className={`relative z-10 w-full overflow-x-hidden selection:bg-cyan-500/30 transition-all duration-1000 ease-out ${
+        started && viewMode === 'default' ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-10 invisible pointer-events-none fixed"
       }`}>
 
         <main className="h-screen w-full flex flex-col items-center justify-center relative px-4">
@@ -117,10 +117,6 @@ export default function Home() {
         onClose={() => setIsChatWidgetOpen(false)} 
       />
 
-      {/* منطق جدید:
-         اگر چت باز است -> هیچ دکمه‌ای نشان نده
-         اگر چت بسته است -> دکمه‌های شناور را نشان بده
-      */}
       <AnimatePresence>
         {!isChatWidgetOpen && (
           <>

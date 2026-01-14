@@ -3,7 +3,7 @@
 import React, { useRef, useMemo, Suspense } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
-import { Stars } from "@react-three/drei";
+import { Stars, useProgress } from "@react-three/drei";
 import * as THREE from "three";
 
 const TEXTURES = {
@@ -19,6 +19,10 @@ const TEXTURES = {
   uranus: "/textures/uranus.jpg",
   neptune: "/textures/neptun.jpg",
 };
+
+Object.values(TEXTURES).forEach((texture) => {
+  useLoader.preload(TextureLoader, texture);
+});
 
 function createGlowTexture() {
   if (typeof document === 'undefined') return null;
@@ -211,6 +215,7 @@ export default function SolarSystem({ viewMode = 'default' }: { viewMode?: 'defa
         <ambientLight intensity={0.4} color="#ccccff" /> 
         <pointLight position={[50, 50, 50]} intensity={1} color="#ffffff" />
         <Stars radius={300} depth={100} count={3000} factor={4} saturation={0} fade speed={0.5} />
+
         <Suspense fallback={null}><SceneContent /></Suspense>
         <SyncCamera viewMode={viewMode} />
       </Canvas>

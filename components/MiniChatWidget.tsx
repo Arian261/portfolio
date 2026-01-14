@@ -82,7 +82,6 @@ export default function MiniChatWidget({ isOpen, onClose }: MiniChatWidgetProps)
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 50, scale: 0.95 }}
           transition={{ type: "spring", damping: 30, stiffness: 350 }}
-          // تغییر اصلی اینجاست: bottom-4 برای چسبیدن به پایین
           className="fixed bottom-4 right-4 z-[1100] w-[90%] md:w-[380px] h-[550px] max-h-[85vh] flex flex-col bg-[#050505]/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_0_80px_rgba(0,0,0,0.8)] overflow-hidden font-sans ring-1 ring-white/5"
         >
           {/* Header */}
