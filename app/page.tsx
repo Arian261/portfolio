@@ -85,11 +85,17 @@ export default function Home() {
            </div>
 
            <button 
-             onClick={() => setIsModalOpen(true)}
-             className="relative px-12 py-4 bg-white text-black font-bold tracking-[0.2em] rounded-full hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 z-10"
-           >
-             VIEW COMMUNICATION
-           </button>
+            onClick={() => setIsModalOpen(true)}
+            className="relative group px-12 py-4 font-bold tracking-[0.2em] rounded-full text-white overflow-hidden z-10 transition-all duration-500
+             bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]
+             hover:bg-white/10 hover:scale-105 hover:border-white/30 hover:shadow-[0_0_40px_rgba(34,211,238,0.3)]"
+>
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12" /> 
+              <span className="relative z-10 drop-shadow-md">
+              VIEW COMMUNICATION
+              </span>
+            </button>
+
            <p className="mt-8 text-gray-500 text-xs font-mono tracking-widest z-10">
              READY TO COLLABORATE
            </p>
