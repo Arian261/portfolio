@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { 
   Phone, Send, Globe, Mail, Linkedin, X, ExternalLink, 
-  Github, Bot, Activity, HeartPulse, ArrowRight 
+  Bot, Activity, HeartPulse, ArrowRight 
 } from "lucide-react";
 import Image from "next/image";
 
@@ -91,16 +91,6 @@ export default function ContactModal({ isOpen, onClose, onOpenChat }: ContactMod
       border: "group-hover:border-sky-500/50"
     },
     { 
-      id: "github",
-      name: "GitHub", 
-      value: "Code Repository", 
-      icon: <Github size={20} />, 
-      link: "https://github.com/arian261",
-      accent: "group-hover:text-purple-400",
-      glow: "group-hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]",
-      border: "group-hover:border-purple-500/50"
-    },
-    { 
       id: "email",
       name: "Email", 
       value: "arian.monadi261...", 
@@ -169,15 +159,15 @@ export default function ContactModal({ isOpen, onClose, onOpenChat }: ContactMod
                         </div>
                       </div>
                       <div>
-                         <h3 className="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
-                            Arian Monadi
-                         </h3>
-                         <div className="flex items-center gap-2 mt-1">
-                            <Activity size={12} className="text-rose-500 animate-pulse" />
-                            <p className="text-rose-500/80 font-mono text-[10px] tracking-[0.2em] uppercase">
-                                SYSTEM ALIVE
-                            </p>
-                         </div>
+                          <h3 className="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+                             Arian Monadi
+                          </h3>
+                          <div className="flex items-center gap-2 mt-1">
+                             <Activity size={12} className="text-rose-500 animate-pulse" />
+                             <p className="text-rose-500/80 font-mono text-[10px] tracking-[0.2em] uppercase">
+                                 SYSTEM ALIVE
+                             </p>
+                          </div>
                       </div>
                    </div>
                    
@@ -206,15 +196,15 @@ export default function ContactModal({ isOpen, onClose, onOpenChat }: ContactMod
                         <div className="relative z-10 flex items-center justify-between">
                            <div className="flex items-center gap-3">
                               <div className={`p-2 rounded-lg bg-white/5 text-gray-400 ${contact.accent} transition-colors group-hover:bg-transparent`}>
-                                 {contact.icon}
+                                  {contact.icon}
                               </div>
                               <div className="flex flex-col">
-                                 <span className="text-[10px] font-mono text-gray-600 uppercase tracking-widest group-hover:text-gray-400 transition-colors">
-                                    {contact.name}
-                                 </span>
-                                 <span className="text-sm font-bold text-gray-300 group-hover:text-white transition-colors truncate max-w-[120px] md:max-w-none">
-                                    {contact.value}
-                                 </span>
+                                  <span className="text-[10px] font-mono text-gray-600 uppercase tracking-widest group-hover:text-gray-400 transition-colors">
+                                     {contact.name}
+                                  </span>
+                                  <span className="text-sm font-bold text-gray-300 group-hover:text-white transition-colors truncate max-w-[120px] md:max-w-none">
+                                     {contact.value}
+                                  </span>
                               </div>
                            </div>
                            <ExternalLink 
@@ -270,7 +260,7 @@ export default function ContactModal({ isOpen, onClose, onOpenChat }: ContactMod
                            }`}
                         >
                            <span className="relative z-10 flex items-center gap-2">
-                             Initialize <ArrowRight size={14} className={isAiHovered ? "text-rose-500" : ""} />
+                              Initialize <ArrowRight size={14} className={isAiHovered ? "text-rose-500" : ""} />
                            </span>
                         </button>
                      </div>
